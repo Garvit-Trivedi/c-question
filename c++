@@ -886,3 +886,226 @@
 //     cout << "Con.: " << add(str1, str2) << endl;
 //     return 0;
 // }
+
+
+
+
+
+// 30.Write a program to input an integer 'n' and print the sum of all its even digits and the sum of all its odd digits separately. Example : Input: n = 132456, Output: 12, 9
+
+    
+// #include <iostream>
+// using namespace std;
+
+// void sum(int n){
+    
+//     int even=0;
+//     int odd=0;
+    
+//     while(n!=0){
+//         int digit = n%10;
+        
+//         if(digit%2==0){
+//             even+=digit;
+//         }
+//         else{
+//             odd+=digit;
+//         }
+//         n/=10;
+    
+// }
+
+// cout << "even sum: "<< even << endl;
+// cout << "odd sum " << odd << endl;
+// }
+
+// int main(){
+
+//     int n=123;
+//     sum(n);
+    
+//     return 0;
+// }
+
+
+
+// 29.Write a program to find all pairs in an array whose sum is equal to a given number.: Example 1: Input: nums = [2,7,11,15], target = 9 , Output: [0,1].
+
+// #include <iostream>
+// #include <vector>
+// using namespace  std;
+//  int js(vector<int>arr, int target){
+//      int n=arr.size();
+//      int count=0;
+     
+//      for(int i=0;i<n;i++){
+//          for(int j=i+1;j<n;j++){
+//              if(arr[i]+arr[j]==target){
+//                  count++;
+//              }
+//          }
+//      }
+//      cout<< count;
+//      return 0;
+//  }
+ 
+//  int main(){
+//      vector<int>arr={1,2,3,4,5};
+//      int target=6;
+//      js(arr,target);
+//      return 0;
+//  }
+
+
+// 28. Write a function that takes two numbers and prints the largest one.Example:Input:number1 = 10;, Number2= 20; Output:20;
+
+// #include <iostream>
+// using namespace std;
+
+
+// void Number(int num1, int num2) {
+   
+//     if (num1 > num2) {
+//         cout << "The largest number is: " << num1 << endl;
+//     } else {
+//         cout << "The largest number is: " << num2 << endl;
+//     }
+// }
+
+// int main() {
+//     int num1 = 10; 
+//     int num2 = 20; 
+
+   
+//     Number(num1, num2);
+
+//     return 0;
+// }
+
+// 24. Write a program to remove whitespace from both ends of a string. Example: Input: " hello ", Output: "hello".
+
+// #include <iostream>
+// using namespace std;
+
+// void trim(char str[]) {
+//     int start = 0, end = 0;
+//     while (str[start] == ' ') start++;
+//     for (end = start; str[end] != '\0'; end++);
+//     end--;
+//     while (str[end] == ' ') end--;
+//     for (int i = start; i <= end; i++) {
+//         cout << str[i];
+//     }
+// }
+
+// int main() {
+//     char input[] = " hello ";
+//     trim(input);
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <algorithm>
+//  #include <cctype>
+//  using namespace std;
+ 
+//  string hello(string str){
+//      str.erase(str.begin(),find_if(str.begin(),str.end(),[](unsigned char ch){
+//          return !isspace(ch);
+//      }));
+     
+//      str.erase(find_if(str.rbegin(), str.rend(),[](unsigned char ch){return !isspace(ch);}).base(), str.end());
+//      return str;
+//  }
+ 
+//  int main(){
+//      string str ="  hello ";
+//      cout << "remove: " << hello(str) << endl;
+//      return 0;
+//  }
+ 
+ 
+
+
+// #include <iostream>
+// #include <algorithm>
+// #include <cctype>
+// using namespace std;
+
+// string hello(string str){
+//     auto start = find_if_not(str.begin(), str.end(), [](unsigned char ch){return !isspace(ch);});
+    
+//     auto end = find_if_not(str.rbegin(), str.rend(),[](unsigned char ch){
+//         return  !isspace(ch);
+//     }).base();
+//     return(start < end ? string(start, end): "");
+// }
+
+// int main(){
+//     string str = "  helleo  ";
+//     cout << "remove" << hello(str);
+//     return 0;
+// }
+
+
+
+
+
+
+// 25. Write a program to split a string into an array of words. Example: Input: inputString = "Hello world, welcome to JavaScript!";Output:'Hello', 'world', 'welcome', 'to', 'JavaScript'
+
+
+
+
+// #include <iostream>
+// #include <cstring>
+// using namespace std;
+
+// void split(string str) {
+//     int start = 0;
+//     int length = str.length();
+
+//     for (int i = 0; i < length; i++) {
+//         if (str[i] == ' ' || ispunct(str[i])) {
+//             if (i > start) {
+//                 cout << "'" << str.substr(start, i - start) << "', ";
+//             }
+//             start = i + 1;
+//         }
+//     }
+
+//     if (start < length) {
+//         cout << "'" << str.substr(start) << "'" << endl;
+//     }
+// }
+
+// int main() {
+//     string str = "Hello world, welcome to JavaScript!";
+//     split(str);
+//     return 0;
+// }
+
+
+
+
+
+
+// 26. Write a program to check if a string ends with a specific character.Example: Input: ("codinggita", "a"), Output: true.
+
+
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// bool endsWith(string str, char ch) {
+//     return str[str.length() - 1] == ch;
+// }
+
+// int main() {
+//     string inputString = "codinggita";
+//     char ch = 'a';
+
+//     cout << (endsWith(inputString, ch) ? "true" : "false") << endl; 
+//     return 0;
+// }
